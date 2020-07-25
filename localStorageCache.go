@@ -26,7 +26,7 @@ func NewLocalStorageCache(dir string) ICache {
 
 func (p *LocalStorageCache) getFileName(key string) string {
 	filename := utils.Sha512(key) + ".txt"
-	return path.Join(p.baseDir, "cache", filename[0:2], filename[2:4], filename[4:6], filename[6:8], filename)
+	return path.Join(p.baseDir, filename[0:2], filename[2:4], filename[4:6], filename[6:8], filename)
 }
 
 func (p *LocalStorageCache) isFileExists(filename string) bool {
